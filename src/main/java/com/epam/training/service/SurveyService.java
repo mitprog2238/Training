@@ -13,7 +13,7 @@ import java.util.List;
 public interface SurveyService {
 
     /**
-     * returns pure data set, which was fetched from the csv file
+     * returns pure data set, which was fetched from the data source
      * */
     List<SurveyDataDto> retrieveAllSurveyData();
 

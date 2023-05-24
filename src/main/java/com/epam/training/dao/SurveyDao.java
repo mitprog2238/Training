@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author mitprog1
  *
- * Fetching all data from csv file
+ * Fetching all data from data source
  *
  * */
 public interface SurveyDao {
