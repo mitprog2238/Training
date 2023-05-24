@@ -1,6 +1,6 @@
 package com.epam.training.dao;
 
-import com.epam.training.dto.SurveyData;
+import com.epam.training.dto.SurveyDataDto;
 
 import java.util.List;
 
@@ -12,5 +12,5 @@ import java.util.List;
  * */
 public interface SurveyDao {
 
-    List<SurveyData> retrieveAllSurveyDataFromDataSource();
+    List<SurveyDataDto> retrieveAllSurveyDataFromDataSource();
 }

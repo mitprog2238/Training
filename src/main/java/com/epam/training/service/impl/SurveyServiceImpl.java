@@ -1,7 +1,7 @@
 package com.epam.training.service.impl;
 
 import com.epam.training.dao.SurveyDao;
-import com.epam.training.dto.SurveyData;
+import com.epam.training.dto.SurveyDataDto;
 import com.epam.training.service.SurveyService;
 
 import java.util.ArrayList;
@@ -16,23 +16,23 @@ public class SurveyServiceImpl implements SurveyService {
     }
 
     @Override
-    public List<SurveyData> retrieveAllSurveyData() {
+    public List<SurveyDataDto> retrieveAllSurveyData() {
         return dao.retrieveAllSurveyDataFromDataSource();
     }
 
     @Override
-    public List<SurveyData> retrieveSurveyDataFilteredByIndustryCode(String industryCode) {
-        List<SurveyData> all = dao.retrieveAllSurveyDataFromDataSource();
+    public List<SurveyDataDto> retrieveSurveyDataFilteredByIndustryCode(String industryCode) {
+        List<SurveyDataDto> all = dao.retrieveAllSurveyDataFromDataSource();
 
-        List<SurveyData> filtered = filterByIndustryCode(all, industryCode);
+        List<SurveyDataDto> filtered = filterByIndustryCode(all, industryCode);
 
         return filtered;
     }
 
-    private List<SurveyData> filterByIndustryCode(List<SurveyData> all, String industryCode) {
-        List<SurveyData> filtered = new ArrayList<>();
+    private List<SurveyDataDto> filterByIndustryCode(List<SurveyDataDto> all, String industryCode) {
+        List<SurveyDataDto> filtered = new ArrayList<>();
 
-        for (SurveyData data: all) {
+        for (SurveyDataDto data: all) {
             if(industryCode.equalsIgnoreCase(data.getIndustry_code())){
                 filtered.add(data);
             }

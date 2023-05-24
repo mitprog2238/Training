@@ -1,6 +1,6 @@
 package com.epam.training.service;
 
-import com.epam.training.dto.SurveyData;
+import com.epam.training.dto.SurveyDataDto;
 
 import java.util.List;
 /**
@@ -15,10 +15,10 @@ public interface SurveyService {
     /**
      * returns pure data set, which was fetched from the csv file
      * */
-    List<SurveyData> retrieveAllSurveyData();
+    List<SurveyDataDto> retrieveAllSurveyData();
 
     /**
      * returns the data set, filtered by exact industryCode - value
      * */
-    List<SurveyData> retrieveSurveyDataFilteredByIndustryCode(String industryCode);
+    List<SurveyDataDto> retrieveSurveyDataFilteredByIndustryCode(String industryCode);
 }

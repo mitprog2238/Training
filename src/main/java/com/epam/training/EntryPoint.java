@@ -2,7 +2,7 @@ package com.epam.training;
 
 import com.epam.training.dao.SurveyDao;
 import com.epam.training.dao.impl.SurveyDaoImpl;
-import com.epam.training.dto.SurveyData;
+import com.epam.training.dto.SurveyDataDto;
 import com.epam.training.service.SurveyService;
 import com.epam.training.service.impl.SurveyServiceImpl;
 
@@ -47,17 +47,17 @@ public class EntryPoint {
     }
 
     private static void printFilteredDataByIndustryCode(SurveyService service, String filteringParam) {
-        List<SurveyData> surveyData = service.retrieveSurveyDataFilteredByIndustryCode(filteringParam);
+        List<SurveyDataDto> surveyData = service.retrieveSurveyDataFilteredByIndustryCode(filteringParam);
 
-        for (SurveyData sdItem : surveyData) {
+        for (SurveyDataDto sdItem : surveyData) {
             System.out.println(sdItem);
         }
     }
 
     private static void printAllDataFromTheFile(SurveyService service) {
-        List<SurveyData> surveyData = service.retrieveAllSurveyData();
+        List<SurveyDataDto> surveyData = service.retrieveAllSurveyData();
 
-        for (SurveyData sdItem : surveyData) {
+        for (SurveyDataDto sdItem : surveyData) {
             System.out.println(sdItem);
         }
     }

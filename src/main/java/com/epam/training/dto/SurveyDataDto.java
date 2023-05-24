@@ -2,7 +2,7 @@ package com.epam.training.dto;
 
 import java.util.Objects;
 
-public class SurveyData {
+public class SurveyDataDto {
 //    year,industry_code_ANZSIC,industry_name_ANZSIC,rme_size_grp,variable,value,unit
 
     private String year;
@@ -14,9 +14,9 @@ public class SurveyData {
     private String unit;
 
 
-    public SurveyData() {
+    public SurveyDataDto() {
     }
-    public SurveyData(String year, String industry_code, String industry_name_ANZSIC, String rme_size_grp, String variable, String value, String unit) {
+    public SurveyDataDto(String year, String industry_code, String industry_name_ANZSIC, String rme_size_grp, String variable, String value, String unit) {
         this.year = year;
         this.industry_code = industry_code;
         this.industry_name_ANZSIC = industry_name_ANZSIC;
@@ -42,8 +42,8 @@ public class SurveyData {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof SurveyData)) return false;
-        SurveyData that = (SurveyData) o;
+        if (!(o instanceof SurveyDataDto)) return false;
+        SurveyDataDto that = (SurveyDataDto) o;
         return Objects.equals(getYear(), that.getYear()) && Objects.equals(getIndustry_code(), that.getIndustry_code()) && Objects.equals(getIndustry_name_ANZSIC(), that.getIndustry_name_ANZSIC()) && Objects.equals(getRme_size_grp(), that.getRme_size_grp()) && Objects.equals(getVariable(), that.getVariable()) && Objects.equals(getValue(), that.getValue()) && Objects.equals(getUnit(), that.getUnit());
     }
 

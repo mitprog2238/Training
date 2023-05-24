@@ -1,7 +1,7 @@
 package com.epam.training.dao.impl;
 
 import com.epam.training.dao.SurveyDao;
-import com.epam.training.dto.SurveyData;
+import com.epam.training.dto.SurveyDataDto;
 import com.epam.training.rowmapper.CustomStringToSurveyDataRowMapper;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
@@ -17,17 +17,22 @@ import java.util.List;
 
 public class SurveyDaoImpl implements SurveyDao {
 
-    private static final String PATH_TO_DATA_SOURCE = "src/main/resources/csv/annual-enterprise-survey.csv";
+
+//    path from repo root can be used for the case, you're running the app via entry point from the IDE
+//    private static final String PATH_TO_DATA_SOURCE = "src/main/resources/csv/annual-enterprise-survey.csv";
+
+    //absolute path should be used for the case, you're running compiled jar file.
+    private static final String PATH_TO_DATA_SOURCE = "D:\\ITPU\\code\\Training\\src\\main\\resources\\csv\\annual-enterprise-survey.csv";
 
 
     @Override
-    public List<SurveyData> retrieveAllSurveyDataFromDataSource() {
+    public List<SurveyDataDto> retrieveAllSurveyDataFromDataSource() {
 
         List<String[]> allData = fetchDataFromCsvFile();
 
         removeHeaderDataFromPureDataSet(allData);
 
-        List<SurveyData> sDataResulted = transformStringDataIntoDtoBasedCollection(allData);
+        List<SurveyDataDto> sDataResulted = transformStringDataIntoDtoBasedCollection(allData);
         return sDataResulted;
     }
 
@@ -54,13 +59,13 @@ public class SurveyDaoImpl implements SurveyDao {
         return allData;
     }
 
-    private List<SurveyData> transformStringDataIntoDtoBasedCollection(List<String[]> allData) {
+    private List<SurveyDataDto> transformStringDataIntoDtoBasedCollection(List<String[]> allData) {
         CustomStringToSurveyDataRowMapper rowMapper =new CustomStringToSurveyDataRowMapper();
-        List<SurveyData> result = new ArrayList<>();
+        List<SurveyDataDto> result = new ArrayList<>();
 
 //        for (String[] row : allData.subList(0,5)) {
         for (String[] row : allData) {
-            SurveyData sd = rowMapper.mapRaw(row);
+            SurveyDataDto sd = rowMapper.mapRaw(row);
 
             result.add(sd);
         }

@@ -1,18 +1,18 @@
 package com.epam.training.rowmapper;
 
-import com.epam.training.dto.SurveyData;
+import com.epam.training.dto.SurveyDataDto;
 
 /**
  * @author mitprog1
  *
  *  Transforms the single row fetched from the csv file
- *  into {@link SurveyData} object
+ *  into {@link SurveyDataDto} object
  *
  * */
 public class CustomStringToSurveyDataRowMapper {
 
-    public SurveyData mapRaw(String[] row){
-        SurveyData sd = new SurveyData();
+    public SurveyDataDto mapRaw(String[] row){
+        SurveyDataDto sd = new SurveyDataDto();
 
         sd.setYear(row[0]);
         sd.setIndustry_code(row[1]);
