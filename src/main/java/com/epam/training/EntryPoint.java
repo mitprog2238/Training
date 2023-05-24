@@ -1,7 +1,7 @@
 package com.epam.training;
 
 import com.epam.training.dao.SurveyDao;
-import com.epam.training.dao.impl.SurveyDaoImpl;
+import com.epam.training.dao.impl.SurveyCsvBasedDaoImpl;
 import com.epam.training.dto.SurveyDataDto;
 import com.epam.training.service.SurveyService;
 import com.epam.training.service.impl.SurveyServiceImpl;
@@ -25,7 +25,7 @@ import java.util.List;
 public class EntryPoint {
 
     public static void main(String[] args) {
-        SurveyDao dao = new SurveyDaoImpl();
+        SurveyDao dao = new SurveyCsvBasedDaoImpl();
         SurveyService service = new SurveyServiceImpl(dao);
 
         if (args.length == 0){

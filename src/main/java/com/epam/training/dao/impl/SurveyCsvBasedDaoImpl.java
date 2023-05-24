@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SurveyDaoImpl implements SurveyDao {
+public class SurveyCsvBasedDaoImpl implements SurveyDao {
 
 
 //    path from repo root can be used for the case, you're running the app via entry point from the IDE
